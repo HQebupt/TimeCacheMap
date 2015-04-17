@@ -78,10 +78,10 @@ expirationSecs / (numBuckets-1) * numBuckets - expirationSecs / (numBuckets-1) =
 
 ## RotatingMap
 > **RotatingMap** 对于 **TimeCacheMap** 的改进：
-> 1. 去掉了自动清理的线程，让用户自己去控制清理过期的数据，控制清理数据用`rotate()`方法。
-> 2. `get`, `put`等方法都不加锁了，需要用户自己控制锁。（提供了更大的自由度，让开发者去控制这个数据结构。）
-> 3. **TimeCacheMap**是线程安全的，**RotatingMap** 是线程不安全的。
-> 4. **Storm** 弃用 **TimeCacheMap** ，支持 non-threaded **RotatingMap**.
+> * 去掉了自动清理的线程，让用户自己去控制清理过期的数据，控制清理数据用`rotate()`方法。
+> * `get`, `put`等方法都不加锁了，需要用户自己控制锁。（提供了更大的自由度，让开发者去控制这个数据结构。）
+> * **TimeCacheMap**是线程安全的，**RotatingMap** 是线程不安全的。
+> * **Storm** 弃用 **TimeCacheMap** ，支持 non-threaded **RotatingMap**.
 
 rotate() 方法：
 ``` java
